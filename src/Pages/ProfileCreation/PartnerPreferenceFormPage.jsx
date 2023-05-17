@@ -251,7 +251,7 @@ const PartnerPreferenceFormPage = () => {
                                 <div className="prof_creation_main_panel my-4">
                                     <div className="ProfileCreation___tabpanel profile_creation_fields">
                                         <Form onSubmit={handleSubmit(onSubmitForm)}>
-                                            <Row className="profile_creation_form_row">
+                                            <Row className="profile_creation_form_row partner-form">
                                                 <Col className="mb-4 pb-2 col" xs="12" sm="6" md="6">
                                                     <Controller
                                                         control={control}
@@ -290,6 +290,7 @@ const PartnerPreferenceFormPage = () => {
                                                         {errors.partner_age?.type == "required" && "Field is required"}
                                                     </span>
                                                 </Col>
+                                                {/*  */}
                                                 <Col className="mb-4 pb-2 col" xs="12" sm="6" md="6">
                                                     <Controller
                                                         control={control}
@@ -339,6 +340,7 @@ const PartnerPreferenceFormPage = () => {
                                                         {errors.education?.type == "required" && "Field is required"}
                                                     </span>
                                                 </Col>
+                                                {/*  */}
                                                 <Col className="mb-4 pb-2 col" xs="12" sm="6" md="6">
                                                     <Controller
                                                         control={control}
