@@ -1,0 +1,28 @@
+.about_box_item {
+    margin: 5px;
+    padding: 5px;
+    height: 100%;
+    border: 1px solid rgb(183, 181, 181);
+    border-radius: 6px;
+}
+.about_box_item .image_wrapper {
+    display: flex;
+    justify-content: center;
+}
+.about_box_item .image_wrapper img {
+    width: 300px;
+}
+.about_box_item p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+.about_slide_title_box {
+    margin-bottom: 25px;
+}
+.about_slide_title_box h2 {
+    text-align: center;
+    color: brown;
+    text-transform: capitalize;
+    font-size: 1.75rem;
+    line-height: 1.5rem;
+}

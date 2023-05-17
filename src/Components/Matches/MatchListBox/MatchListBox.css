@@ -1,0 +1,344 @@
+.matchlistbox_wrapper {
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  margin: 10px;
+}
+
+.matchlistbox {
+  /* border: 0px solid transparent; */
+  border: 1px solid var(--lighter-border);
+  background: rgb(255, 255, 255);
+  display: flex;
+  height: 248px;
+  position: relative;
+  /* width: 738px; */
+  border-radius: 3px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  z-index: 1;
+  box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px;
+}
+
+.matchlistbox:hover {
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px;
+}
+
+.matchlistbox_imagebox_wrap {
+  flex: 0 0 200px;
+  height: auto;
+  position: relative;
+  border-right: 1px solid var(--lighter-border);
+  border-left: 1px solid var(--lighter-border);
+}
+
+.matchlistbox_imagebox {
+  position: relative;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 3px 0px 0px 3px;
+}
+.matchlistbox_image {
+  height: 100%;
+}
+
+.matchlistbox_image_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.matchlistbox_image_requests {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.matchlistbox_image_requests .request_photo {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.matchlistbox_image_hidder {
+  width: 100%;
+  height: 100%;
+}
+
+.matchlistbox_profiledetail_wrap {
+  width: 100%;
+  padding-left: 5px;
+  /* padding-right: 5px; */
+  display: flex;
+}
+.matchlistbox_profiledetail_box_left {
+  flex: 1;
+}
+.matchlistbox_profiledetail_box_right {
+  flex: 1;
+}
+.matchlistbox_profiledetail_box {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.matchlistbox_profiledetail_box_wrap_link {
+  text-decoration: none;
+}
+
+.matchlistbox_profiledetail_header_box {
+  border-bottom: 1px solid var(--light-border);
+}
+.matchlistbox_profiledetail_header_box .top_header {
+  display: flex;
+  justify-content: space-between;
+}
+.matchlistbox_profiledetail_header_box .top_header .name_box {
+  display: flex;
+  justify-content: center;
+}
+.matchlistbox_profiledetail_header_box .top_header .name_box h4 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+}
+.matchlistbox_profiledetail_header_box .top_header .name_box h4 a {
+  text-decoration: none;
+  color: var(--text-color);
+  position: relative;
+  margin-bottom: 0;
+  transition: 0.25s;
+}
+.matchlistbox_profiledetail_header_box .top_header .name_box h4 a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  height: 2px;
+  background-color: var(--text-color);
+}
+.matchlistbox_profiledetail_header_box .h_verification_box {
+  color: var(--text-color);
+  margin-left: 4px;
+  cursor: pointer;
+}
+.matchlistbox_profiledetail_header_box .h_verification_box svg {
+  font-size: 22px;
+}
+
+.matchlistbox_profiledetail_header_box .bottom_header {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.matchlistbox_status_btn_wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+.matchlistbox_status_btn .status_icon {
+  width: 22px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  animation: 1.5s ease-in-out 0s infinite normal none running
+    matchlistbox_status_animate;
+  margin: 0px;
+  background-position: left -52px;
+  display: inline-block;
+  vertical-align: sub;
+  cursor: pointer;
+}
+@keyframes matchlistbox_status_animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.matchlistbox_status_btn .status_info {
+  font-size: 0.9rem;
+  color: gray;
+}
+.matchlistbox_status_btn:hover .status_info {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-primary-hover);
+}
+
+.matchlistbox_profile_match_btn {
+  display: flex;
+  align-items: center;
+}
+.matchlistbox_profile_match_btn svg {
+  color: #a40773;
+}
+.matchlistbox_profile_match_btn .profile_match_info {
+  font-size: 0.9rem;
+  color: #454545;
+  margin-top: 2px;
+}
+
+.matchlistbox_profiledetail_body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.matchlistbox_profiledetail_box p {
+  color: var(--text-color);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.matchlistbox_description {
+  margin-top: 4px;
+}
+.matchlistbox_description .profile_para {
+  font-size: 14px;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.matchlistbox_connectionbox_wrap {
+  width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding-left: 15px; */
+  padding-right: 5px;
+}
+.matchlistbox_connectionbox_box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--lighter-border);
+}
+.matchlistbox_likeprofile_box .text_profile {
+  color: var(--text-color);
+}
+.matchlistbox_likeprofile_icon_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5px;
+  transition: 0.25s;
+}
+.matchlistbox_likeprofile_status {
+  color: var(--text-color);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.matchlistbox_likeprofile_icon_box:hover {
+  cursor: pointer;
+}
+.matchlistbox_likeprofile_icon_box .icon_box {
+  position: relative;
+}
+.matchlistbox_likeprofile_icon_box .icon_box .m_icon {
+  position: relative;
+  font-size: 2.8rem;
+  color: white !important;
+  border-radius: 50%;
+  background: rgb(23, 170, 124);
+  padding: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(23, 170, 124, 1) 0%,
+    rgba(30, 119, 90, 1) 49%,
+    rgba(17, 208, 202, 1) 100%
+  );
+}
+.matchlistbox_likeprofile_icon_box .icon_box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: -3px;
+  outline: 2px solid rgb(23, 170, 124);
+  border-radius: 50%;
+}
+.matchlistbox:hover .matchlistbox_likeprofile_icon_box .icon_box:before {
+  background: rgb(23, 170, 124);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 170, 124, 1) 0%,
+    rgba(30, 119, 90, 1) 49%,
+    rgba(17, 208, 202, 1) 100%
+  );
+}
+.matchlistbox_likeprofile_icon_box .icon_box:hover .m_icon {
+  background: rgb(3, 91, 63);
+}
+.matchlistbox:hover
+  .matchlistbox_likeprofile_icon_box
+  .matchlistbox_likeprofile_status {
+  font-weight: 600;
+  color: blue;
+}
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+}
+
+@media (max-width: 1199.98px) {
+  .matchlistbox {
+    flex-wrap: wrap;
+    height: auto !important;
+  }
+  .matchlistbox_imagebox_wrap {
+    flex: none;
+    width: 30%;
+  }
+  .matchlistbox_profiledetail_wrap {
+    /* width: 70%; */
+    width: 100%;
+  }
+  .matchlistbox_connectionbox_wrap {
+    width: 100%;
+    border-top: 1px solid var(--lighter-border);
+  }
+  .matchlistbox_connectionbox_box {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 767.98px) {
+}
+
+@media (max-width: 575.98px) {
+  .matchlistbox_imagebox_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #454545;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .matchlistbox_profiledetail_wrap {
+    width: 100%;
+  }
+  .matchlistbox_connectionbox_wrap {
+    width: 100%;
+    border-top: 1px solid var(--lighter-border);
+  }
+}

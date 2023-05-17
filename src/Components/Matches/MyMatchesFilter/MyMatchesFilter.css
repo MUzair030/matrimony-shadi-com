@@ -1,0 +1,99 @@
+.my_matches_filter_wrapper {
+  position: sticky;
+  /* top: 15px; */
+  top: 70px;
+
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.my_matches_filter_box .accordion-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.my_matches_filter_box .accordion-item:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+.my_matches_filter_box .accordion_title {
+  display: flex;
+  justify-content: center;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
+}
+.my_matches_filter_box .accordion_title .filter_icon {
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--color-secondary) !important;
+  font-size: 20px;
+  margin-left: -18px;
+}
+.my_matches_filter_box .accordion_title p {
+  font-weight: 700;
+  line-height: 0.8rem;
+  color: var(--color-secondary);
+}
+
+.my_matches_filter_box {
+  font-size: 12px;
+}
+.my_matches_filter_box .accordion-item p {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.my_matches_filter_box .accordion-header .accordion-button {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  /* color: rgb(1, 168, 1); */
+  color: rgb(77, 76, 76);
+  /* background-color: rgb(244, 243, 243); */
+  background-color: white;
+  outline: none;
+  box-shadow: none;
+}
+.my_matches_filter_box .accordion-body {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 6px;
+}
+.my_matches_filter_box .accordion-header .accordion-button::after {
+  width: 0.8rem !important;
+  height: 0.8rem !important;
+  background-size: 0.8rem !important;
+}
+.my_matches_filter_box .accordion-header .accordion-button.collapsed {
+  color: rgb(55, 55, 55);
+}
+
+.my_matches_filter_box label {
+  margin-bottom: -4px;
+}
+
+.my_matches_radio_box {
+  margin-bottom: 6px !important;
+}
+.my_matches_radio_box label {
+  display: flex;
+  line-height: 1.2;
+}
+.my_matches_radio_box label:not(:last-child) {
+  margin-bottom: 4px;
+}
+.my_matches_radio_box label input[type="radio"] {
+  margin-right: 4px;
+  min-width: 12px;
+  min-height: 12px;
+  width: 12px;
+  height: 12px;
+  box-shadow: none !important;
+  outline: none !important;
+}

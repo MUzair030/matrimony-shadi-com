@@ -1,0 +1,87 @@
+.inbox_page_wrapper {
+  min-height: 90vh;
+  padding: 1.3rem 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.inbox_page_wrapper .card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(8, 21, 66, 0.05);
+  letter-spacing: 0.5px;
+}
+.inbox_page_wrapper .chat {
+  position: relative !important;
+}
+.inbox_page_wrapper ul li {
+  list-style: none;
+  list-style-type: none;
+}
+.chat-box .people-list .search .form-control {
+  margin-top: 20px;
+}
+.inbox_page_wrapper .chat-left-aside .people-list ul {
+  /* max-height: 434px; */
+  max-height: 510px;
+  /* overflow-y: auto; */
+}
+
+.inbox_page_wrapper .chat-user-img {
+  width: 30px;
+  height: 30px;
+}
+
+.inbox_text_box {
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.inbox_text_box button {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.inbox_page_wrapper .chat-msg-box_list {
+  padding-left: 0 !important;
+}
+
+.inbox_page_wrapper .emoji-mart.emoji-mart-light {
+  width: 100% !important;
+}
+
+.chat-msg-box_list li.clearfix:last-child .message { margin-bottom: 0 !important; }
+
+@media (max-width: 1199.98px) {
+  .inbox_page_wrapper .chat-box .toogle-bar {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inbox_page_wrapper .message {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .inbox_page_wrapper .message {
+    width: 70% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .call-chat-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px;
+  }
+  .inbox_page_wrapper .message {
+    width: 100% !important;
+  }
+  .inbox_text_box button {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}

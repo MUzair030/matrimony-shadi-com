@@ -1,0 +1,170 @@
+.hero__search_container {
+  display: flex;
+}
+
+.hero__search_container .hero__search_imagebox {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.hero__search_container .hero__search_searchbox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__search_container .hero__search_imagebox .hero__search_imagebox_image {
+  border-radius: 50%;
+  box-shadow: -23px -1px 30px -5px rgb(0 0 0 / 6%);
+  z-index: 2;
+  margin-left: 120px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.hero__search_imagebox_bg_img {
+  position: absolute;
+  top: -30px;
+  left: -7%;
+  width: 90%;
+  z-index: -1;
+}
+
+.hero__search_searchbox .text_box_wrapped {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.hero__search_searchbox .text_box_wrapped .text_box {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.hero__search_searchbox .text_box_wrapped .text_box h2 {
+  font-weight: 700;
+  line-height: 1.4em;
+  letter-spacing: 0.5px;
+  color: var(--color-secondary);
+  font-size: 2.5rem;
+}
+.hero__search_searchbox .text_box_wrapped .text_box p {
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.hero__search_searchbox .search_box {
+  /* margin-right: 15%; */
+  width: 90%;
+  padding: 40px 50px 40px 50px;
+  background-color: #ffffff;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 9px 34px 0px rgb(0 0 0 / 10%);
+  z-index: 3;
+}
+.hero__search_searchbox .search_box_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rebeccapurple; */
+}
+.hero__search_searchbox .search_box_inner .my_col:not(:last-child) {
+  width: 22%;
+}
+.hero__search_searchbox .search_box_inner .my_col:last-child {
+  width: 10%;
+}
+.hero__search_searchbox .search_box select {
+  outline: none;
+  box-shadow: none;
+}
+.hero__search_searchbox .search_box button {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--color-primary);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.hero__search_searchbox .search_box button svg {
+  color: var(--color-primary) !important;
+}
+.hero__search_searchbox .search_box button:hover {
+  background-color: var(--color-primary) !important;
+}
+.hero__search_searchbox .search_box button:hover svg {
+  color: #FFFFFF !important;
+}
+.hero__search_searchbox .search_box .select_option:hover {
+  background-color: var(--color-primary) !important;
+  background: var(--color-primary) !important;
+}
+
+@media (max-width: 991.98px) {
+  .hero__search_container {
+    flex-direction: column;
+  }
+  .hero__search_searchbox .text_box_wrapped {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+  .hero__search_container .hero__search_imagebox .hero__search_imagebox_image {
+    margin-bottom: 40px;
+  }
+  .hero__search_container .hero__search_imagebox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+  }
+  .hero__search_container .hero__search_searchbox {
+    flex: 1;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+  }
+  .hero__search_container .hero__search_imagebox .hero__search_imagebox_image {
+    margin-left: 0;
+  }
+  .hero__search_searchbox .search_box {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .hero__search_searchbox .text_box_wrapped {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .hero__search_searchbox .text_box_wrapped .text_box {
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+  .hero__search_searchbox .text_box_wrapped .text_box h2 {
+    line-height: 1.4em;
+    font-size: 2.0rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero__search_imagebox_bg_img {
+    transform: rotate(20deg);
+    left: 22%;
+    top: 6%;
+  }
+  .hero__search_searchbox .text_box_wrapped .text_box h2 {
+    line-height: 1.4em;
+    font-size: 1.8rem;
+  }
+  .hero__search_searchbox .text_box_wrapped .text_box p {
+    font-size: 14px;
+  }
+  .hero__search_searchbox .search_box_inner {
+    flex-wrap: wrap;
+  }
+  .hero__search_searchbox .search_box_inner .my_col:not(:last-child) {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .hero__search_searchbox .search_box_inner .my_col:last-child {
+    width: auto;
+  }
+}

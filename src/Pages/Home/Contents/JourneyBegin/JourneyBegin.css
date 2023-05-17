@@ -1,0 +1,124 @@
+.journey_begin_wrapped {
+  margin-top: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+}
+.journey_begin_image_bgcolor {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 60%;
+  /* background-color: #6141c0; */
+  background-color: var(--color-primary);
+  z-index: -1;
+  border-top-right-radius: 6px;
+}
+.journey_begin {
+  display: flex;
+}
+.journey_imagebox {
+  flex: 1;
+}
+.journey_description_box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.journey_description {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.journey_description_title h3 {
+  line-height: 0.9rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: -1px;
+  color: var(--color-secondary);
+}
+.journey_description_title h2 {
+  font-weight: 900;
+  color: var(--color-secondary);
+  font-size: 2.6rem;
+  margin-bottom: 25px;
+}
+.journey_description_para {
+  color: var(--text-color);
+}
+.journey_imagebox_wrapped {
+  display: flex;
+  align-items: center;
+}
+.journey_imagebox {
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #bbbaba;
+}
+.journey_imagebox img {
+  border-left: 1px solid black;
+  position: relative;
+  height: 550px;
+}
+
+.journey_description button {
+  font-weight: 600;
+  fill: #ffffff;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--color-primary);
+  border-radius: 5px 5px 5px 5px;
+  padding: 18px 60px 18px 60px;
+  transition: 0.25s;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.journey_description button:hover {
+  background-color: #ffffff;
+  fill: var(--color-primary);
+  color: var(--color-primary-hover);
+}
+
+@media (max-width: 992px) {
+  .journey_begin_image_bgcolor {
+    left: 0;
+    right: 0;
+    bottom: 60%;
+    border-top-left-radius: 6px;
+  }
+  .journey_begin {
+    flex-direction: column;
+  }
+  .journey_imagebox img {
+    height: auto;
+    width: 100%;
+  }
+  .journey_begin_wrapped {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .journey_description_box {
+    margin-top: 60px;
+  }
+  .journey_description {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .journey_begin_image_bgcolor {
+    bottom: 70%;
+  }
+  .journey_description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

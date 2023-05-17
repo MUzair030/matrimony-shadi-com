@@ -1,0 +1,19 @@
+.dmv_carousel .dmvc_container .dmvc-item {
+  padding: 10px;
+}
+
+.react-multiple-carousel__arrow {
+  background: var(--color-secondary-light);
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: #ef5163;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: calc(0% + 0px);
+}
+
+.react-multiple-carousel__arrow--left {
+  left: calc(0% + 0px);
+}
