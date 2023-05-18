@@ -111,11 +111,6 @@ const ProfileForm = (props) => {
                                     }}
                                     renderInput={(params) => (
                                         <TextField
-                                            sx={{
-                                                ".MuiInputLabel-root": {
-                                                fontSize: "12px !important"
-                                            }
-                                            }}
                                             {...params}
                                             fullWidth
                                             label="This account is for"
