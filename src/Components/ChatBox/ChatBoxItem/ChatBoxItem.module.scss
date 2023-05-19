@@ -1,0 +1,37 @@
+.chatBoxItem {
+//   background-color: red;
+  display: flex;
+  grid-gap: 10px;
+  align-items: center;
+  margin: 1rem .9rem;
+  position: relative;
+
+  .cb_img {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+
+  .cb_name{
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .cb_status{
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}

@@ -1,0 +1,50 @@
+.dating_tips_box {
+  position: relative;
+  margin-bottom: 10%;
+}
+
+.dating_tips_box_imagebox {
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--light-border);
+  transform: scale(1.01);
+  z-index: 3;
+}
+.dating_tips_box_image {
+  width: 100%;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.dating_tips_body {
+  position: absolute;
+  left: 10%;
+  right: -2px;
+  /* bottom: 0; */
+  /* transform: translateY(50%); */
+  background-color: white;
+  margin-top: -65px;
+  padding: 25px 15px;
+  border-radius: 6px;
+  border: 1px solid var(--light-border);
+  z-index: 9;
+}
+.dating_tips_body h2 {
+  color: black;
+  transition: 0.25s;
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 50px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.dating_tips_box:hover .dating_tips_box_image {
+  transform: scale(1.1);
+}
+.dating_tips_box:hover .dating_tips_body h2 {
+  color: var(--color-primary);
+}

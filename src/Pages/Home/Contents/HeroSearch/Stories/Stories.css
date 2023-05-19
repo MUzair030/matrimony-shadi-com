@@ -1,0 +1,103 @@
+.story_box_single_card {
+  background-color: #ffffff;
+  box-shadow: 0 0 30px rgb(0 0 0 / 8%);
+  border-radius: 6px;
+}
+.story_box_single_image_image_box {
+  overflow: hidden;
+  height: 400px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.story_box_single_image {
+  width: 100%;
+  transform: translateY(-200px);
+}
+.story_box_single_body {
+  padding: 30px 20px;
+}
+.story_box_single_body a {
+  text-decoration: none;
+}
+.story_box_single_body h2 {
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: 0.25s;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.story_box_single_body h2:hover {
+  color: var(--color-primary);
+}
+.story_box_single_body_para {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.story_box_single_body p {
+  color: var(--text-color);
+  text-align: justify;
+}
+/* ----------------- */
+
+.story_box_card {
+  background-color: #ffffff;
+  box-shadow: 0 0 30px rgb(0 0 0 / 8%);
+  border-radius: 6px;
+}
+.story_box_card a {
+  text-decoration: none;
+}
+.story_box_card_image_box {
+  overflow: hidden;
+  height: 150px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.story_box_image {
+  width: 100%;
+  transform: translateY(-20px);
+}
+.story_box_card_body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+}
+.story_box_card_body h2 {
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: 0.25s;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.story_box_card_body h2:hover {
+  color: var(--color-primary);
+}
+.story_box_body_para {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.story_box_body_para p {
+    color: var(--text-color);
+    text-align: justify;
+  }

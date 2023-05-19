@@ -1,0 +1,32 @@
+.preferences_update_button_box {
+  /* margin-top: 20px; */
+  /* text-align: center; */
+  margin-top: auto;
+  padding-top: 20px;
+  padding-left: 21px;
+}
+
+.preferences_update_button_box button {
+  background: #fd7080;
+  font-family: Poppins !important;
+  border-radius: 8px;
+  font-weight: 400 !important;
+  font-size: 16px;
+  line-height: 23px;
+  box-shadow: none !important;
+  outline: none !important;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+  margin-bottom: 13px;
+  border: 1px solid #fd7080 !important;
+}
+.preferences_update_button_box button:focus {
+  background: #fd7080;
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #fd7080 !important;
+}
+.preferences_update_button_box button:hover {
+  color: #fd7080;
+  background-color: #FFF;
+}

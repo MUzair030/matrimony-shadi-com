@@ -1,0 +1,21 @@
+/* .home__page {
+    min-height: 1500px;
+} */
+.home_slider__section {
+    width: 100%;
+    min-height: 720px;
+}
+
+.story_section {
+    /* background-color: #fef7fa; */
+    background-color: #f8ecf2;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.tips_section {
+    /* padding-top: 80px; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+

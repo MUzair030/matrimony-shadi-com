@@ -1,0 +1,50 @@
+
+.footer-page {
+    margin-left: 7%;
+    margin-right: 7%;
+    min-height: 90vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.foot-page-title {
+    font-family: Poppins-Bold;
+    text-align: center;
+    color: #404040;
+}
+
+/* .footer-page .fp-text-box:not(:last-child) {
+    margin-bottom: 20px;
+} */
+
+.fp-text-box-title {
+    margin-bottom: 0;
+    color: #000000;
+    margin-bottom: 18px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fp-text-box-detail {
+    font-family: Poppins;
+    margin-bottom: 0;
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.fp-text-box-list {
+    font-family: Poppins;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 0;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .privacy_p_t {
+        margin-bottom: 25px !important;
+    }
+}

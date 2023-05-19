@@ -1,0 +1,400 @@
+.matchviewbox_mobi_detailed_profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.matchviewbox_mobi_detailed_profile_box_wrapper {
+  width: 100%;
+  /* background-color: #f4efef; */
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  box-shadow: rgb(0 0 0 / 7%) 0px -1px 1px, rgb(0 0 0 / 7%) 0px 4px 4px,
+    rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px,
+    rgb(0 0 0 / 7%) 0px 12px 12px;
+}
+
+.matchviewbox_mobi_detailed_profile_box {
+  /* padding: 5px 8px; */
+  padding: 5px 1.25rem;
+}
+
+.matchviewbox_mobi_detailed_profile_box_header .pb_mobi_title_box {
+  display: flex;
+  align-items: center;
+  padding-top: 0.75rem;
+  color: var(--text-color);
+  padding-bottom: 24px;
+}
+.matchviewbox_mobi_detailed_profile_box_header .pb_mobi_icon_box {
+  margin-right: 6px;
+  margin-left: 2px;
+}
+.matchviewbox_mobi_detailed_profile_box_header .pb_mobi_icon_box .pb_icon {
+  color: var(--color-secondary) !important;
+  /* font-size: 28px; */
+  font-size: 22px;
+}
+.matchviewbox_mobi_detailed_profile_box_header .pb_mobi_title {
+  font-size: 19px;
+  margin-bottom: -2px;
+  font-weight: 900;
+  min-width: 60px;
+  color: var(--text-color);
+}
+
+.matchviewbox_mobi_detailed_profile_box_body {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 4px;
+  font-size: 14px;
+}
+.matchviewbox_mobi_detailed_profile_box_body .about_text {
+  margin-bottom: 8px;
+}
+/* -------------------------------------------------------- */
+.matchviewbox_mobi_detailed_profile_box_body.contact_box {
+  display: flex;
+  width: 100%;
+  /* margin-top: 10px; */
+}
+.matchviewbox_mobi_detailed_profile_box_body.contact_box .left_box {
+  width: 50%;
+}
+.matchviewbox_mobi_detailed_profile_box_body.contact_box .right_box {
+  width: 50%;
+  display: flex;
+}
+
+.matchviewbox_mobi_detailed_profile_box_body .left_box .detail_info_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.matchviewbox_mobi_detailed_profile_box_body .left_box .detail_info_box p {
+  margin-bottom: 0;
+  /* color: rgb(79, 78, 78); */
+  color: var(--text-color) !important;
+  font-size: 14px;
+}
+.matchviewbox_mobi_detailed_profile_box_body
+  .left_box
+  .detail_info_box
+  .info_icon {
+  margin-right: 4px;
+  width: 16px;
+}
+.matchviewbox_mobi_detailed_profile_box_body
+  .left_box
+  .detail_info_box
+  .info_text {
+  font-weight: 500;
+}
+
+.matchviewbox_mobi_detailed_profile_box_body .subscribe_package_box {
+  margin-top: auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.matchviewbox_mobi_detailed_profile_box_body .subscribe_package_box p {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+.matchviewbox_mobi_detailed_profile_box_body .subscribe_package_box h5 {
+  color: var(--color-secondary);
+  margin-bottom: 0;
+  font-size: 17px !important;
+  font-weight: 700;
+}
+
+.matchviewbox_mobi_detailed_profile_box_header.contact_box .pb_icon {
+  margin-left: -4px !important;
+}
+
+/* -------------------------------------------------------- */
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle .lifestyle_box_wrapper {
+  width: 33%;
+  margin-bottom: 1.5rem;
+}
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle
+  .lifestyle_box_wrapper
+  .lifestyle_box {
+  padding: 0.2rem 1.5rem 0.2rem 1rem;
+  border-radius: 15px;
+  position: relative;
+  margin-right: 4px;
+}
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle
+  .lifestyle_box_wrapper
+  .lifestyle_box
+  .title {
+  margin-bottom: 0;
+  color: #ffffff;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle
+  .lifestyle_box_wrapper
+  .lifestyle_box
+  .icon_box_wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle
+  .lifestyle_box_wrapper
+  .lifestyle_box
+  .icon_box_wrapper
+  .icon_box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  /* transform: translateX(8px); */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.matchviewbox_mobi_detailed_profile_box_body.lifestyle
+  .lifestyle_box_wrapper
+  .lifestyle_box
+  .icon_box_wrapper
+  .icon_box
+  .icon {
+  color: #ffffff !important;
+  font-size: 28px;
+}
+
+.matchviewbox_mobi_imagebox {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.matchviewbox_mobi_imagebox_other_images_box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* -------------------------------------------------------- */
+.matchviewbox_mobi_detailed_profile_box_body.family {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family .family_box_wrapper {
+  width: 50%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family
+  .family_box_wrapper
+  .family_box {
+  padding: 0.4rem 0.75rem 0.4rem 0.75rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family
+  .family_icon_box
+  .family_icon {
+  margin-right: 8px;
+  width: 25px;
+  height: 25px;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family .family_detail_box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family .family_detail_box p {
+  margin-bottom: 0;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family .family_detail_box .title {
+  font-size: 10px;
+  font-family: Poppins !important;
+  line-height: 1;
+  line-break: anywhere;
+  min-width: 42px;
+}
+.matchviewbox_mobi_detailed_profile_box_body.family
+  .family_detail_box
+  .description {
+  font-family: Poppins !important;
+  font-size: 11px;
+  color: var(--text-color);
+  margin-left: 10px;
+  line-height: 1;
+  line-break: anywhere;
+  min-width: 30px;
+}
+
+@media (max-width: 768.1px) {
+  .matchviewbox_mobi_detail_wrapped {
+    padding-left: 1.25rem;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle
+    .lifestyle_box_wrapper {
+    /* width: 100% !important; */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family .family_box_wrapper {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_box_wrapper:nth-child(odd) {
+    padding-right: 6px;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_box_wrapper:nth-child(even) {
+    padding-left: 6px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle
+    .lifestyle_box_wrapper {
+    /* width: 50%; */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  /* .matchviewbox_mobi_detailed_profile_box_body.family .family_box_wrapper {
+    width: 100%;
+  } */
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_detail_box
+    .description {
+    margin-left: 5px;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_detail_box
+    .title {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 545px) {
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_box_wrapper
+    .family_box {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .matchviewbox_mobi_detailed_profile_box_wrapper {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_detail_box
+    .description {
+    font-size: 9px;
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 481.98px) {
+  .matchviewbox_mobi_detailed_profile_box_body.contact_box {
+    flex-direction: column;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.contact_box .left_box {
+    width: 100%;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.contact_box .right_box {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@media (max-width: 450.1px) {
+  .matchviewbox_mobi_detailed_profile_box {
+    padding: 5px 0.75rem;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_box_wrapper
+    .family_box {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_icon_box
+    .family_icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family .family_detail_box {
+    flex-direction: column;
+    align-items: start;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_detail_box
+    .title {
+    font-size: 11px;
+    margin-bottom: 1px;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.family
+    .family_detail_box
+    .description {
+    font-size: 8px;
+    margin-left: 0 !important;
+  }
+  .matchviewbox_mobi_detailed_profile_box_wrapper.family_wrap {
+    padding-bottom: 0.4rem;
+  }
+
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle .lifestyle_box_wrapper .lifestyle_box .title {
+    font-size: 11px;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle .lifestyle_box_wrapper .lifestyle_box .icon_box_wrapper .icon_box .icon {
+    font-size: 18px;
+  }
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle .lifestyle_box_wrapper .lifestyle_box .icon_box_wrapper .icon_box {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 350.1px) {
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle .lifestyle_box_wrapper .lifestyle_box { 
+    padding-left: 0.4rem;
+  }
+}
+
+@media (max-width: 375.98px) {
+  .matchviewbox_mobi_detailed_profile_box_body.lifestyle
+    .lifestyle_box_wrapper {
+    /* width: 100%; */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}

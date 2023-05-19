@@ -1,0 +1,52 @@
+.chat_box {
+  /* position: fixed; */
+  /* bottom: 86px; */
+  position: sticky;
+  top: 70px;
+  left: 10px;
+  /* border: 1px solid gray; */
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  z-index: 99;
+  /* width: 16%; */
+  width: 100%;
+  /* width: 240px; */
+  background-color: #fff;
+  transition: all 2s ease-in-out;
+  /* border-top-left-radius: 8px; */
+  /* border-top-right-radius: 8px; */
+  border-radius: 8px;
+}
+.chat_box_header {
+  text-align: center;
+  background-color: #fff;
+  /* background-color: var(--color-secondary); */
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid #d0d0d0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.chat_box_header:hover {
+  cursor: pointer;
+}
+.chat_box_header .chat_box_icon {
+  color: var(--color-secondary) !important;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 767.98px) {
+}
+
+@media (max-width: 575.98px) {
+}

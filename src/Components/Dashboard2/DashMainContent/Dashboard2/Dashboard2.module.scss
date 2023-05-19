@@ -1,0 +1,637 @@
+.dashboard {
+  margin: 60px 0;
+  padding: 28px 16px;
+
+  .column_3 {
+    width: 22%;
+  }
+
+  .column_6 {
+    width: 56%;
+  }
+
+  .d_blank_box {
+    background-color: white;
+    border-radius: 8px;
+  }
+
+  .d_notifications {
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 14px;
+    position: sticky;
+    top: 70px;
+
+    .dn_header {
+      display: flex;
+      justify-content: center;
+      grid-gap: 11.32px;
+      padding: 7px 0 15px;
+      border-bottom: 1px solid #eeecec;
+
+      .dn_img {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        font-family: var(--ff-poppins);
+        font-style: normal;
+        font-weight: 600;
+        margin-top: 3px;
+        font-size: 16px;
+        line-height: 21px;
+        color: var(--color-secondary-light);
+      }
+    }
+
+    .dn_item {
+      margin: 14px 9px 0px 13px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eeecec;
+
+      .dni_profile {
+        display: flex;
+        grid-gap: 7px;
+        align-items: center;
+        position: relative;
+
+        .dni_img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 44px;
+          height: 44px;
+          border-radius: 100%;
+
+          img {
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            border-radius: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+
+        span {
+          font-family: var(--ff-poppins);
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 18px;
+          color: #726969;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          padding-left: 54px;
+          padding-top: 6px;
+        }
+      }
+
+      .dni_date {
+        text-align: right;
+        font-family: var(--ff-poppins);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #afafaf;
+        margin-top: 12px;
+        padding-right: 15px;
+      }
+    }
+
+    .dn_button {
+      width: 100%;
+      display: flex;
+      padding-right: 20px;
+
+      button {
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        font-family: var(--ff-poppins);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 13px;
+        margin-top: 45px;
+        color: #a36178;
+      }
+    }
+  }
+
+  .d_mainContent {
+    // background-color: red;
+
+    .dm_profile {
+      margin-bottom: 20px;
+
+      .dmp_user {
+        background-color: white;
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+
+        .dmpu_verify {
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          grid-gap: 5px;
+
+          .dmpu_tick {
+            width: 13.67px;
+            height: 13.67px;
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          span {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 15px;
+            text-align: justify;
+            color: #afafaf;
+          }
+        }
+
+        .dmpu_profile_img {
+          display: flex;
+          margin: 14px 0;
+
+          .dmpup_img {
+            width: 144px;
+            height: 144px;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 100%;
+            }
+
+            .dmpup_camera_img {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              right: 8px;
+              bottom: 5px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .dmpu_name {
+          margin-bottom: 22px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          h4 {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #726969;
+            margin-bottom: 5px;
+
+            &.small {
+              font-size: 16px;
+            }
+          }
+
+          h5 {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 15px;
+            color: #afafaf;
+          }
+
+          button {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-top: 1rem;
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 13px;
+            color: var(--color-secondary-light);
+            background: transparent;
+            border: none;
+
+            img {
+              width: 16px;
+              height: 16px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
+      .dmp_status {
+        background-color: white;
+        border-radius: 8px;
+        padding: 34px 36px;
+        text-align: center;
+        height: 157px;
+
+        h1 {
+          display: flex;
+          grid-gap: 10px;
+          align-items: center;
+          justify-content: center;
+          font-family: var(--ff-poppins);
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 18px;
+          color: #726969;
+        }
+
+        p {
+          margin-top: 28px;
+          font-family: var(--ff-poppins);
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          color: #726969;
+          a {
+            color: var(--color-secondary-light);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .dm_visitors {
+      margin-bottom: 20px;
+
+      .dmv_header {
+        background: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 16px;
+        align-items: center;
+        margin-bottom: 22px;
+
+        h1 {
+          font-family: var(--ff-poppins);
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 24px;
+          color: #726969;
+          margin: 0;
+        }
+
+        div {
+          font-family: var(--ff-poppins);
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 21px;
+          text-align: justify;
+          color: var(--color-secondary-light);
+        }
+      }
+
+      .dmv_card {
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        padding: 10px;
+
+        .dmvc_online {
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          grid-gap: 5px;
+          font-family: var(--ff-poppins);
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 15px;
+          color: #747474;
+
+          span {
+            width: 9px;
+            height: 9px;
+            border-radius: 100%;
+            background-color: #2fcd2c;
+          }
+        }
+
+        .dmvc_profile_img {
+          width: 160px;
+          height: 160px;
+          border-radius: 100%;
+          margin: 0 auto;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+          }
+        }
+
+        .dmvc_user_details {
+          margin: 12px 0 15px;
+
+          h1 {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #726969;
+          }
+
+          .dmvcu_detail_list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 8px;
+
+            li {
+              font-family: var(--ff-poppins);
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 15px;
+              color: #afafaf;
+              padding: 0 6px;
+              border-right: 1px solid #afafaf;
+
+              &:first-child {
+                padding-left: 0;
+              }
+
+              &:last-child {
+                border-right: none;
+              }
+            }
+          }
+
+          .dmvcu_religion {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 15px;
+            color: #afafaf;
+            margin-bottom: 14px;
+          }
+
+          .dmvcu_age_location {
+            display: flex;
+            align-items: center;
+            grid-gap: 10px;
+            margin-bottom: 14px;
+
+            .dmvcual_img {
+              width: 20px;
+              height: 20px;
+              position: relative;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+            }
+
+            .dmvcual_text {
+              font-family: var(--ff-poppins);
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 15px;
+              color: #726969;
+            }
+          }
+
+          .dmvcu_line {
+            margin: 20px 0 0;
+            background: #eeecec;
+          }
+        }
+
+        .dmvc_connect_now {
+          text-align: center;
+
+          div {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 15px;
+            color: #b6b6b6;
+          }
+
+          button {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 13px;
+            color: var(--color-secondary-light);
+            background: transparent;
+            border: none;
+            text-transform: uppercase;
+            margin: 6px 0;
+
+            img {
+              width: 53px;
+              height: 53px;
+              margin-right: 5px;
+              position: relative;
+              top: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    .dm_matches {
+      .dmm_card {
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        padding-bottom: 22px;
+
+        .dmmc_header {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #eeecec;
+          padding: 12px 12px 14px;
+
+          h1 {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #726969;
+            margin: 0;
+          }
+
+          div {
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: justify;
+            color: var(--color-secondary-light);
+          }
+        }
+
+        .dmmc_items_holder {
+          margin-top: 14px;
+          margin-bottom: 28px;
+          padding: 0 10px;
+
+          .dmmc_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eeecec;
+            padding: 14px 0;
+
+            .dmmci_profile_details {
+              display: flex;
+              grid-gap: 10px;
+              align-items: center;
+
+              .dmmci_profile_img {
+                width: 78px;
+                height: 78px;
+                border-radius: 100%;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 100%;
+                }
+              }
+
+              .dmmcip_details {
+                h1 {
+                  font-family: var(--ff-poppins);
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 20px;
+                  line-height: 24px;
+                  color: #726969;
+                  margin-bottom: 0.7rem;
+                }
+
+                div {
+                  font-family: var(--ff-poppins);
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 14px;
+                  line-height: 15px;
+                  color: #726969;
+
+                  &:last-child {
+                    margin-top: 6px;
+                  }
+                }
+              }
+            }
+
+            .dmmci_connect_now {
+              position: relative;
+
+              .dmmci_diamond_icon {
+                position: absolute;
+                right: 0;
+                top: -13px;
+                width: 19px;
+                height: 18px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              .dmmci_ring_img {
+                width: 53px;
+                height: 53px;
+                margin: 0 auto;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              button {
+                font-family: var(--ff-poppins);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 15px;
+                background: transparent;
+                border: none;
+                color: var(--color-secondary-light);
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+
+        .dmmc_view_btn {
+          display: flex;
+          margin-right: 10px;
+
+          button {
+            margin-left: auto;
+            font-family: var(--ff-poppins);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 13px;
+            color: #a36178;
+            background: transparent;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
