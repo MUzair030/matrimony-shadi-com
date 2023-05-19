@@ -38,7 +38,7 @@ import AllCountryCodes from "../../assets/init/AllCountryCodes"
 import useWindowDimensions from '../../Hooks/useWindowDimensions';
 import { martialStatusOpt, heightOpt, castOpt, subCommunityOpt, incomeMonthlyOpt } from "../../Data/profileCreationData"
 
-const ProfileForm = (props) => {
+const ProfileFormTab1 = (props) => {
     const { screenWidth, screenHeight } = useWindowDimensions();
 
     const {
@@ -48,9 +48,6 @@ const ProfileForm = (props) => {
         handleSubmit,
         formState: { errors },
     } = useForm({ shouldFocusError: true });
-
-    const introAboutDefault_2 = `Allow me a self-introduction.
-    I firmly believe honesty to be a man's greatest virtue. I am looking for a loving and caring partner who will walk hand-in-hand with me in every phase of life. If the above strikes the chord, please feel free to connect.`;
 
     const introAboutDefault = `Allow me a self-introduction.
     Write more someting about yourselt.`;
@@ -67,6 +64,14 @@ const ProfileForm = (props) => {
     );
 
     const [countriesList, setCountriesList] = useState([]);
+    let formData1 = sessionStorage.getItem("formData1");
+    formData1 = formData1? JSON.parse(formData1) : null;
+
+    const onSubmitForm = (data) => {
+        console.log("onSubmitFormTab 1", data)
+        sessionStorage.setItem("formData1", JSON.stringify(data));
+        props.nextTab();
+    }
 
     useEffect(() => {
         let countryArr = [];
@@ -74,13 +79,8 @@ const ProfileForm = (props) => {
         setCountriesList(countryArr)
     }, [])
 
-    // console.log("countriesList",countriesList)
 
-    const onSubmitForm = (data) => {
-        console.log("onSubmitForm", data)
 
-        props.nextTab();
-    }
 
     return (
         <>
@@ -91,7 +91,7 @@ const ProfileForm = (props) => {
                             control={control}
                             name='account_for'
                             rules={{ required: false }}
-                            defaultValue={null}
+                            defaultValue={formData1? formData1.account_for : null}
                             render={({ field }) => (
                                 <Autocomplete
                                     className="mui_autocomplete_field"
@@ -132,47 +132,7 @@ const ProfileForm = (props) => {
                             {errors.account_for?.type == "required" && "Field is required"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='martial_status'
-                            rules={{ required: false }}
-                            defaultValue={null}
-                            render={({ field }) => (
-                                <Autocomplete
-                                    className="mui_autocomplete_field"
-                                    {...field}
-                                    popupIcon={<KeyboardArrowDownIcon />}
-                                    options={martialStatusOpt}
-                                    autoHighlight
-                                    getOptionLabel={(option) => option.value}
-                                    isOptionEqualToValue={(option, value) => option.value}
-                                    onChange={(event, newValue) => {
-                                        setValue('martial_status', newValue);
-                                    }}
-                                    renderInput={(params) => (
-                                        <TextField
-                                            {...params}
-                                            fullWidth
-                                            label="Your Martial Relation?"
-                                            inputProps={{
-                                                ...params.inputProps,
-                                                autoComplete: 'off',
-                                            }}
-                                        />
-                                    )}
-                                    renderOption={(props, option) => (
-                                        <MenuList {...props} className="mui_options_menu_list_render">
-                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
-                                        </MenuList>
-                                    )}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.martial_status?.type == "required" && "Field is required"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
@@ -181,7 +141,7 @@ const ProfileForm = (props) => {
                                 required: false,
                                 pattern: /^(1[89]|[2-9]\d)$/gm,
                             }}
-                            defaultValue={""}
+                            defaultValue={formData1? formData1.age : null}
                             render={({ field }) => (
                                 <TextField
                                     {...field}
@@ -199,38 +159,13 @@ const ProfileForm = (props) => {
                             {errors.age?.type == "pattern" && "Age must be between 18 to 99"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='education'
-                            rules={{
-                                required: false,
-                                pattern: /^[a-zA-Z0-9_ -]*$/,
-                            }}
-                            defaultValue={""}
-                            render={({ field }) => (
-                                <TextField
-                                    {...field}
-                                    fullWidth
-                                    className="mui_text_field"
-                                    label="Educational Background"
-                                    onChange={(event) => {
-                                        setValue("education", event.target.value)
-                                    }}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.education?.type == "required" && "Field is required"}
-                            {errors.education?.type == "pattern" && "Please write Alphanumeric Values"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='your_height'
                             rules={{ required: false }}
-                            defaultValue={null}
+                            defaultValue={formData1? formData1.your_height : null}
                             render={({ field }) => (
                                 <Autocomplete
                                     className="mui_autocomplete_field"
@@ -266,32 +201,7 @@ const ProfileForm = (props) => {
                             {errors.your_height?.type == "required" && "Field is required"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='college_name'
-                            rules={{
-                                required: false,
-                                pattern: /^[a-zA-Z0-9_ -]*$/,
-                            }}
-                            defaultValue={""}
-                            render={({ field }) => (
-                                <TextField
-                                    {...field}
-                                    fullWidth
-                                    className="mui_text_field"
-                                    label="College Name"
-                                    onChange={(event) => {
-                                        setValue("college_name", event.target.value)
-                                    }}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.college_name?.type == "required" && "Field is required"}
-                            {errors.college_name?.type == "pattern" && "Please write Alphanumeric Values"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
@@ -299,7 +209,7 @@ const ProfileForm = (props) => {
                             rules={{
                                 required: false,
                             }}
-                            defaultValue={null}
+                            defaultValue={formData1? formData1.date_of_birth : null}
                             render={({ field }) => (
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <MobileDatePicker
@@ -320,38 +230,13 @@ const ProfileForm = (props) => {
                             {errors.date_of_birth?.type == "required" && "Field is required"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='company_name'
-                            rules={{
-                                required: false,
-                                pattern: /^[a-zA-Z0-9_ -]*$/,
-                            }}
-                            defaultValue={null}
-                            render={({ field }) => (
-                                <TextField
-                                    {...field}
-                                    fullWidth
-                                    className="mui_text_field"
-                                    label="Company Name"
-                                    onChange={(event) => {
-                                        setValue("company_name", event.target.value)
-                                    }}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.company_name?.type == "required" && "Field is required"}
-                            {errors.company_name?.type == "pattern" && "Please write Alphanumeric Values"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='country'
                             rules={{ required: false }}
-                            defaultValue={null}
+                            defaultValue={formData1? formData1.country : null}
                             render={({ field }) => (
                                 <Autocomplete
                                     className="mui_autocomplete_field"
@@ -387,53 +272,7 @@ const ProfileForm = (props) => {
                             {errors.country?.type == "required" && "Field is required"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='career_field'
-                            rules={{ required: false }}
-                            defaultValue={null}
-                            render={({ field }) => (
-                                <Autocomplete
-                                    className="mui_autocomplete_field"
-                                    {...field}
-                                    popupIcon={<KeyboardArrowDownIcon />}
-                                    options={[
-                                        { id: 1, value: "Career-1", },
-                                        { id: 2, value: "Career-2", },
-                                        { id: 3, value: "Career-3", },
-                                        { id: 4, value: "Career-4", },
-                                        { id: 5, value: "Career-5", },
-                                    ]}
-                                    autoHighlight
-                                    getOptionLabel={(option) => option.value}
-                                    isOptionEqualToValue={(option, value) => option.value}
-                                    onChange={(event, newValue) => {
-                                        setValue('career_field', newValue);
-                                    }}
-                                    renderInput={(params) => (
-                                        <TextField
-                                            {...params}
-                                            fullWidth
-                                            label="Career field"
-                                            inputProps={{
-                                                ...params.inputProps,
-                                                autoComplete: 'off',
-                                            }}
-                                        />
-                                    )}
-                                    renderOption={(props, option) => (
-                                        <MenuList {...props} className="mui_options_menu_list_render">
-                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
-                                        </MenuList>
-                                    )}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.career_field?.type == "required" && "Field is required"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
@@ -442,7 +281,7 @@ const ProfileForm = (props) => {
                                 required: false,
                                 pattern: /^[a-zA-Z0-9_ -]*$/,
                             }}
-                            defaultValue={""}
+                            defaultValue={formData1? formData1.home_town : null}
                             render={({ field }) => (
                                 <TextField
                                     {...field}
@@ -460,47 +299,7 @@ const ProfileForm = (props) => {
                             {errors.home_town?.type == "pattern" && "Please write Alphanumeric Values"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='monthly_income'
-                            rules={{ required: false }}
-                            defaultValue={null}
-                            render={({ field }) => (
-                                <Autocomplete
-                                    className="mui_autocomplete_field"
-                                    {...field}
-                                    popupIcon={<KeyboardArrowDownIcon />}
-                                    options={incomeMonthlyOpt}
-                                    autoHighlight
-                                    getOptionLabel={(option) => option.value}
-                                    isOptionEqualToValue={(option, value) => option.value}
-                                    onChange={(event, newValue) => {
-                                        setValue('monthly_income', newValue);
-                                    }}
-                                    renderInput={(params) => (
-                                        <TextField
-                                            {...params}
-                                            fullWidth
-                                            label="Monthly Income"
-                                            inputProps={{
-                                                ...params.inputProps,
-                                                autoComplete: 'off',
-                                            }}
-                                        />
-                                    )}
-                                    renderOption={(props, option) => (
-                                        <MenuList {...props} className="mui_options_menu_list_render">
-                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
-                                        </MenuList>
-                                    )}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.monthly_income?.type == "required" && "Field is required"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
@@ -509,7 +308,7 @@ const ProfileForm = (props) => {
                                 required: false,
                                 pattern: /^[a-zA-Z0-9_ -]*$/,
                             }}
-                            defaultValue={""}
+                            defaultValue={formData1? formData1.home_address : null}
                             render={({ field }) => (
                                 <TextField
                                     {...field}
@@ -527,38 +326,13 @@ const ProfileForm = (props) => {
                             {errors.home_address?.type == "pattern" && "Please write Alphanumeric Values"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='personal_values'
-                            rules={{
-                                required: false,
-                                pattern: /^[a-zA-Z0-9_ -]*$/,
-                            }}
-                            defaultValue={""}
-                            render={({ field }) => (
-                                <TextField
-                                    {...field}
-                                    fullWidth
-                                    className="mui_text_field"
-                                    label="Personal Values"
-                                    onChange={(event) => {
-                                        setValue("personal_values", event.target.value)
-                                    }}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.personal_values?.type == "required" && "Field is required"}
-                            {errors.personal_values?.type == "pattern" && "Please write Alphanumeric Values"}
-                        </span>
-                    </Col>
+
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='your_religion'
                             rules={{ required: false }}
-                            defaultValue={null}
+                            defaultValue={formData1? formData1.your_religion : null}
                             render={({ field }) => (
                                 <Autocomplete
                                     className="mui_autocomplete_field"
@@ -600,48 +374,8 @@ const ProfileForm = (props) => {
                             {errors.your_religion?.type == "required" && "Field is required"}
                         </span>
                     </Col>
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
-                        <Controller
-                            control={control}
-                            name='grew_country'
-                            rules={{ required: false }}
-                            defaultValue={null}
-                            render={({ field }) => (
-                                <Autocomplete
-                                    className="mui_autocomplete_field"
-                                    {...field}
-                                    popupIcon={<KeyboardArrowDownIcon />}
-                                    options={countriesList}
-                                    autoHighlight
-                                    getOptionLabel={(option) => option.value}
-                                    isOptionEqualToValue={(option, value) => option.value}
-                                    onChange={(event, newValue) => {
-                                        setValue('grew_country', newValue);
-                                    }}
-                                    renderInput={(params) => (
-                                        <TextField
-                                            {...params}
-                                            fullWidth
-                                            label="Country you grew in?"
-                                            inputProps={{
-                                                ...params.inputProps,
-                                                autoComplete: 'off',
-                                            }}
-                                        />
-                                    )}
-                                    renderOption={(props, option) => (
-                                        <MenuList {...props} className="mui_options_menu_list_render">
-                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
-                                        </MenuList>
-                                    )}
-                                />
-                            )}
-                        />
-                        <span className="field_error">
-                            {errors.grew_country?.type == "required" && "Field is required"}
-                        </span>
-                    </Col>
                 </Row>
+
                 <Row>
                     <Col xs="12" sm="12" md="6">
                         <Row className={`${screenWidth < 768 ? 'profile_creation_form_row' : ''}`}>
@@ -650,7 +384,7 @@ const ProfileForm = (props) => {
                                     control={control}
                                     name='sub_community'
                                     rules={{ required: false }}
-                                    defaultValue={null}
+                                    defaultValue={formData1? formData1.sub_community : null}
                                     render={({ field }) => (
                                         <Autocomplete
                                             className="mui_autocomplete_field"
@@ -691,7 +425,7 @@ const ProfileForm = (props) => {
                                     control={control}
                                     name='cast'
                                     rules={{ required: false }}
-                                    defaultValue={null}
+                                    defaultValue={formData1? formData1.cast : null}
                                     render={({ field }) => (
                                         <Autocomplete
                                             className="mui_autocomplete_field"
@@ -727,12 +461,15 @@ const ProfileForm = (props) => {
                                     {errors.cast?.type == "required" && "Field is required"}
                                 </span>
                             </Col>
+
+
+
                             <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12">
                                 <Controller
                                     control={control}
                                     name='interests'
                                     rules={{ required: false }}
-                                    defaultValue={[]}
+                                    defaultValue={formData1? formData1.interests : []}
                                     render={({ field }) => (
                                         <Autocomplete
                                             multiple
@@ -777,6 +514,10 @@ const ProfileForm = (props) => {
                                     {errors.interests?.type == "required" && "Field is required"}
                                 </span>
                             </Col>
+
+
+
+
                             {
                                 screenWidth >= 767 && (
                                     <Col className="mb-4 prof_cre_form_left_space" xs="12" sm="12" md="6">
@@ -850,4 +591,4 @@ const ProfileForm = (props) => {
     )
 }
 
-export default ProfileForm
+export default ProfileFormTab1

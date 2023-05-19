@@ -4,27 +4,26 @@ import "./ProfileCreation.css"
 import {
     Tabs,
     Tab,
-    useFormControl,
-    Checkbox,
-    Box,
-    TextField,
-    Stack,
-    Button
 } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
 import { Form, Row, Col, Card, CardHeader, CardBody, CardFooter } from 'reactstrap'
-import { Header } from '../../Components'
+// import { Header } from '../../Components'
 import { useNavigate } from "react-router-dom"
-import { Controller, useForm } from "react-hook-form";
-import DoneIcon from '@mui/icons-material/Done';
+// import { Controller, useForm } from "react-hook-form";
+// import DoneIcon from '@mui/icons-material/Done';
 import ProfileIcon from '@mui/icons-material/AccountCircle';
 import EducationIcon from '@mui/icons-material/School';
-import YourIntroIcon from '@mui/icons-material/PermIdentity';
+// import YourIntroIcon from '@mui/icons-material/PermIdentity';
 import ProfileForm from './ProfileForm';
+import f from "../../Components/Signup/ProfileFormTab1";
 import AboutMoreForm from './AboutMoreForm';
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+// import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import useWindowDimensions from '../../Hooks/useWindowDimensions';
 import ShadiProfileLogo from "../../assets/shaadi-logo-profile.png"
+import ProfileFormTab1 from "../../Components/Signup/ProfileFormTab1";
+import ProfileFormTab2 from "../../Components/Signup/ProfileFormTab2";
+import AboutMoreFormTab1 from "../../Components/Signup/AboutMoreFormTab1";
+import AboutMoreFormTab2 from "../../Components/Signup/AboutMoreFormTab2";
 
 const ProfileCreation = () => {
 
@@ -34,33 +33,42 @@ const ProfileCreation = () => {
     const handleTabChange = (event, newValue) => {
         setTabValue(newValue);
     };
-    const { screenWidth, screenHeight } = useWindowDimensions();
+    // const { screenWidth, screenHeight } = useWindowDimensions();
 
     const ImageTest = "assets/images/banner/banner-img-3.jpg";
     // const ImageTest = "assets/images/banner/banner-img-6.jpg";
-
-    useEffect(() => {
-
-    }, [])
 
     const handleContinueTab = () => {
         if (tabValue === 0) {
             setTabValue(1);
         }
         if (tabValue === 1) {
+            setTabValue(2);
+            // navigate("/partner-preference")
+        }
+        if (tabValue === 2) {
+            setTabValue(3);
+            // navigate("/partner-preference")
+        }
+        if (tabValue === 3) {
             // setTabValue(2);
             navigate("/partner-preference")
         }
     }
-
     const handlePreviousTab = () => {
-        if (tabValue === 2) {
-            setTabValue(1);
-        }
-        if (tabValue === 1) {
-            setTabValue(0);
+        if (tabValue !== 0) {
+            setTabValue(tabValue - 1);
         }
     }
+
+    // const handlePreviousTab = () => {
+    //     if (tabValue === 2) {
+    //         setTabValue(1);
+    //     }
+    //     if (tabValue === 1) {
+    //         setTabValue(0);
+    //     }
+    // }
 
     return (
         <>
@@ -91,7 +99,21 @@ const ProfileCreation = () => {
                                                 {/* <h4 className='mb-0'>Tell Us More About Yorself</h4> */}
                                                 <h4 className='mb-0'>Let’s Create Your Profile Now</h4>
                                             </TabPanel>
+                                            <TabPanel
+                                                value={2}
+                                                className="ProfileCreation___tabpanel"
+                                            >
+                                                <h4 className='mb-0'>Let’s Create Your Profile Now</h4>
+                                            </TabPanel>
+                                            <TabPanel
+                                                value={3}
+                                                className="ProfileCreation___tabpanel"
+                                            >
+                                                <h4 className='mb-0'>Let’s Create Your Profile Now</h4>
+                                            </TabPanel>
                                         </div>
+
+
                                         <Tabs
                                             TabIndicatorProps={{
                                                 style: { background: "#FF629500", justifyContent: 'center' },
@@ -103,19 +125,19 @@ const ProfileCreation = () => {
                                         >
                                             <Tab
                                                 icon={
-                                                    <ProfileIcon className={`prof_creation_icon ${tabValue == 1 || tabValue == 2 ? "ptab_completed" : ""}`} />
+                                                    <ProfileIcon className={`prof_creation_icon ${tabValue >= 2 ? "ptab_completed" : ""}`} />
                                                 }
                                                 // label="Profile"
                                                 aria-label="profile_part"
-                                                className={`ProfileCreation_TabContext__tab ${tabValue == 1 || tabValue == 2 ? "ptab_completed" : ""}`}
+                                                className={`ProfileCreation_TabContext__tab ${tabValue >= 2 ? "ptab_completed" : ""}`}
                                             />
                                             <Tab
                                                 icon={
-                                                    <EducationIcon className={`prof_creation_icon ${tabValue == 2 ? "ptab_completed" : ""}`} />
+                                                    <EducationIcon className={`prof_creation_icon ${tabValue >= 3 ? "ptab_completed" : ""}`} />
                                                 }
                                                 // label="Education"
                                                 aria-label="education_part"
-                                                className={`ProfileCreation_TabContext__tab ${tabValue == 2 ? "ptab_completed" : ""}`}
+                                                className={`ProfileCreation_TabContext__tab ${tabValue >= 3 ? "ptab_completed" : ""}`}
                                             // disabled={tabValue === 0}
                                             />
                                         </Tabs>
@@ -124,18 +146,46 @@ const ProfileCreation = () => {
                                 <Card style={{ marginTop: 40 }} className="prof_creation_card">
                                     <CardBody>
                                         <div className="prof_creation_main_panel my-4">
+
+
+                                            {/* first tab */}
                                             <TabPanel
                                                 value={0}
                                                 className="ProfileCreation___tabpanel profile_creation_fields"
                                             >
-                                                <ProfileForm nextTab={handleContinueTab} />
+                                                {/*<ProfileForm nextTab={handleContinueTab} />*/}
+                                                <ProfileFormTab1 nextTab={handleContinueTab} prevTab={handlePreviousTab} />
                                             </TabPanel>
+
+                                            {/* 2nd tab */}
                                             <TabPanel
                                                 value={1}
                                                 className="ProfileCreation___tabpanel profile_creation_fields"
                                             >
-                                                <AboutMoreForm nextTab={handleContinueTab} />
+                                                {/*<ProfileForm nextTab={handleContinueTab} />*/}
+                                                <ProfileFormTab2 nextTab={handleContinueTab} prevTab={handlePreviousTab} />
                                             </TabPanel>
+
+                                            {/* next tab - 3 */}
+                                            <TabPanel
+                                                value={2}
+                                                className="ProfileCreation___tabpanel profile_creation_fields"
+                                            >
+                                                {/*<AboutMoreForm nextTab={handleContinueTab} />*/}
+                                                <AboutMoreFormTab1 nextTab={handleContinueTab} prevTab={handlePreviousTab} />
+                                            </TabPanel>
+
+                                            {/* next tab - 4 */}
+                                            <TabPanel
+                                                value={3}
+                                                className="ProfileCreation___tabpanel profile_creation_fields"
+                                            >
+                                                {/*<AboutMoreForm nextTab={handleContinueTab} />*/}
+                                                <AboutMoreFormTab2 nextTab={handleContinueTab} prevTab={handlePreviousTab} />
+                                            </TabPanel>
+
+
+
                                             {/* <div className="next_button_panel">
                                                                 <Button type='button' className='btn_next' onClick={handleContinueTab}>
                                                                     {tabValue === 2 ? "Create Profile" : "Continue"}
