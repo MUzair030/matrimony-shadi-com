@@ -98,6 +98,10 @@ const AboutMoreFormTab2 = (props) => {
         props.nextTab();
     }
 
+    const handleAddLater = () => {
+        props.nextTab();
+    }
+
     const handleBackButton = () =>{
         console.log("handleBackButton")
         props.prevTab();
@@ -107,6 +111,100 @@ const AboutMoreFormTab2 = (props) => {
         <>
             <Form onSubmit={handleSubmit(onSubmitForm)}>
                 <Row className="profile_creation_form_row">
+
+                <Col className="mb-4 col" xs="12" sm="6" md="6">
+                        <Controller
+                            control={control}
+                            name='family_religious_type'
+                            rules={{ required: false }}
+                            defaultValue={formData4? formData4.family_religious_type : null}
+                            render={({ field }) => (
+                                <Autocomplete
+                                    className="mui_autocomplete_field"
+                                    {...field}
+                                    popupIcon={<KeyboardArrowDownIcon />}
+                                    options={[
+                                        { id: 1, value: "Opt-1", },
+                                        { id: 2, value: "Opt-2", },
+                                        { id: 3, value: "Opt-3", },
+                                        { id: 4, value: "Opt-4", },
+                                    ]}
+                                    autoHighlight
+                                    getOptionLabel={(option) => option.value || ""}
+                                    isOptionEqualToValue={(option, value) => option.value || ""}
+                                    onChange={(event, newValue) => {
+                                        setValue('family_religious_type', newValue);
+                                    }}
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            fullWidth
+                                            label="How much is family religious?"
+                                            inputProps={{
+                                                ...params.inputProps,
+                                                autoComplete: 'off',
+                                            }}
+                                        />
+                                    )}
+                                    renderOption={(props, option) => (
+                                        <MenuList {...props} className="mui_options_menu_list_render">
+                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
+                                        </MenuList>
+                                    )}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.family_religious_type?.type == "required" && "Field is required"}
+                        </span>
+                    </Col>
+
+                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                        <Controller
+                            control={control}
+                            name='family_values'
+                            rules={{ required: false }}
+                            defaultValue={formData4? formData4.family_values : null}
+                            render={({ field }) => (
+                                <Autocomplete
+                                    className="mui_autocomplete_field"
+                                    {...field}
+                                    popupIcon={<KeyboardArrowDownIcon />}
+                                    options={[
+                                        { id: 1, value: "Lower Class", },
+                                        { id: 2, value: "Middle Class", },
+                                        { id: 3, value: "High Standard", },
+                                        { id: 4, value: "Royal Family", },
+                                    ]}
+                                    autoHighlight
+                                    getOptionLabel={(option) => option.value || ""}
+                                    isOptionEqualToValue={(option, value) => option.value || ""}
+                                    onChange={(event, newValue) => {
+                                        setValue('family_values', newValue);
+                                    }}
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            fullWidth
+                                            label="Family Values"
+                                            inputProps={{
+                                                ...params.inputProps,
+                                                autoComplete: 'off',
+                                            }}
+                                        />
+                                    )}
+                                    renderOption={(props, option) => (
+                                        <MenuList {...props} className="mui_options_menu_list_render">
+                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
+                                        </MenuList>
+                                    )}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.family_values?.type == "required" && "Field is required"}
+                        </span>
+                    </Col>
 
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
@@ -432,6 +530,9 @@ const AboutMoreFormTab2 = (props) => {
                             <Button type='submit' className='btn_next'>
                                 {"Save"}
                             </Button>
+                            &nbsp;
+                            &nbsp;
+                            <p className="pref_add_later" onClick={handleAddLater}>I Will Add This Later </p>
                         </div>
                     </Col>
                 </Row>

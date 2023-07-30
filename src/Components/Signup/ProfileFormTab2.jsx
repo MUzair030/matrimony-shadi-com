@@ -53,7 +53,7 @@ const ProfileFormTab2 = (props) => {
     I firmly believe honesty to be a man's greatest virtue. I am looking for a loving and caring partner who will walk hand-in-hand with me in every phase of life. If the above strikes the chord, please feel free to connect.`;
 
     const introAboutDefault = `Allow me a self-introduction.
-    Write more someting about yourselt.`;
+Write more someting about yourselt.`;
 
     let formData2 = sessionStorage.getItem("formData2");
     formData2 = formData2? JSON.parse(formData2) : null;
@@ -164,7 +164,7 @@ const ProfileFormTab2 = (props) => {
                         </span>
                     </Col>
 
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='college_name'
@@ -189,9 +189,9 @@ const ProfileFormTab2 = (props) => {
                             {errors.college_name?.type == "required" && "Field is required"}
                             {errors.college_name?.type == "pattern" && "Please write Alphanumeric Values"}
                         </span>
-                    </Col>
+                    </Col> */}
 
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='company_name'
@@ -216,7 +216,7 @@ const ProfileFormTab2 = (props) => {
                             {errors.company_name?.type == "required" && "Field is required"}
                             {errors.company_name?.type == "pattern" && "Please write Alphanumeric Values"}
                         </span>
-                    </Col>
+                    </Col> */}
 
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
@@ -266,7 +266,7 @@ const ProfileFormTab2 = (props) => {
                         </span>
                     </Col>
 
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='monthly_income'
@@ -306,9 +306,9 @@ const ProfileFormTab2 = (props) => {
                         <span className="field_error">
                             {errors.monthly_income?.type == "required" && "Field is required"}
                         </span>
-                    </Col>
+                    </Col> */}
 
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='personal_values'
@@ -333,7 +333,7 @@ const ProfileFormTab2 = (props) => {
                             {errors.personal_values?.type == "required" && "Field is required"}
                             {errors.personal_values?.type == "pattern" && "Please write Alphanumeric Values"}
                         </span>
-                    </Col>
+                    </Col> */}
 
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
@@ -376,9 +376,111 @@ const ProfileFormTab2 = (props) => {
                             {errors.grew_country?.type == "required" && "Field is required"}
                         </span>
                     </Col>
-                    <Col xs="12" sm="12" md="6">
+
+                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                        <Controller
+                            control={control}
+                            name='mother_language'
+                            rules={{ required: false }}
+                            defaultValue={formData2? formData2.mother_language : null}
+                            render={({ field }) => (
+                                <Autocomplete
+                                    className="mui_autocomplete_field"
+                                    {...field}
+                                    popupIcon={<KeyboardArrowDownIcon />}
+                                    options={[
+                                        { id: 1, value: "English", },
+                                        { id: 2, value: "Urdu", },
+                                        { id: 3, value: "Spanish", },
+                                        { id: 4, value: "Pashto", },
+                                        { id: 5, value: "Hindi", },
+                                    ]}
+                                    autoHighlight
+                                    getOptionLabel={(option) => option.value || ""}
+                                    isOptionEqualToValue={(option, value) => option.value || ""}
+                                    onChange={(event, newValue) => {
+                                        setValue('mother_language', newValue);
+                                    }}
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            fullWidth
+                                            label="Mother Language?"
+                                            inputProps={{
+                                                ...params.inputProps,
+                                                autoComplete: 'off',
+                                            }}
+                                        />
+                                    )}
+                                    renderOption={(props, option) => (
+                                        <MenuList {...props} className="mui_options_menu_list_render">
+                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
+                                        </MenuList>
+                                    )}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.mother_language?.type == "required" && "Field is required"}
+                        </span>
+                    </Col>
+
+                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12"> */}
+                        <Controller
+                            control={control}
+                            name='interests'
+                            rules={{ required: false }}
+                            defaultValue={formData2? formData2.interests : []}
+                            render={({ field }) => (
+                                <Autocomplete
+                                    multiple
+                                    className="mui_autocomplete_field"
+                                    {...field}
+                                    popupIcon={<KeyboardArrowDownIcon />}
+                                    options={[
+                                        { id: 1, value: "Sports", },
+                                        { id: 2, value: "Music", },
+                                        { id: 3, value: "Football", },
+                                        { id: 4, value: "Dancer", },
+                                        { id: 5, value: "Cooking", },
+                                        { id: 6, value: "Driving", },
+                                        { id: 7, value: "Cycling", },
+                                        { id: 8, value: "Cricket", },
+                                    ]}
+                                    autoHighlight
+                                    getOptionLabel={(option) => option?.value || ""}
+                                    onChange={(event, newValue) => {
+                                        setValue('interests', newValue);
+                                    }}
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            fullWidth
+                                            label="Choose Your Interests"
+                                            inputProps={{
+                                                ...params.inputProps,
+                                                autoComplete: 'off',
+                                            }}
+                                        />
+                                    )}
+                                    renderOption={(props, option) => (
+                                        <MenuList {...props} className="mui_options_menu_list_render">
+                                            <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
+                                        </MenuList>
+                                    )}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.interests?.type == "required" && "Field is required"}
+                        </span>
+                    </Col>
+
+                    <Col xs="12" sm="12" md="12">
                         <Row>
-                            <Col className="mb-0 prof_cre_form_right_space_about_yourself" xs="12" sm="12" md="12">
+                            {/* <Col className="mb-0 prof_cre_form_right_space_about_yourself" xs="12" sm="12" md="12"> */}
+                            <Col>
                                 <Controller
                                     control={control}
                                     name="intro_about_yourself"

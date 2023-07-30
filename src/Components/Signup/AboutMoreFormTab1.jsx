@@ -98,6 +98,10 @@ const AboutMoreFormTab1 = (props) => {
         props.nextTab();
     }
 
+    const handleAddLater = () => {
+        props.nextTab();
+    }
+
     const handleBackButton = () =>{
         console.log("handleBackButton")
         props.prevTab();
@@ -334,7 +338,7 @@ const AboutMoreFormTab1 = (props) => {
                         </span>
                     </Col>
 
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='mother_language'
@@ -380,9 +384,9 @@ const AboutMoreFormTab1 = (props) => {
                         <span className="field_error">
                             {errors.mother_language?.type == "required" && "Field is required"}
                         </span>
-                    </Col>
+                    </Col> */}
 
-                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
                             control={control}
                             name='family_religious_type'
@@ -474,7 +478,63 @@ const AboutMoreFormTab1 = (props) => {
                         <span className="field_error">
                             {errors.family_values?.type == "required" && "Field is required"}
                         </span>
+                    </Col> */}
+
+<Col className="mb-4 col" xs="12" sm="6" md="6">
+                        <Controller
+                            control={control}
+                            name='college_name'
+                            rules={{
+                                required: false,
+                                pattern: /^[a-zA-Z0-9_ -]*$/,
+                            }}
+                            defaultValue={formData3? formData3.college_name : ""}
+                            render={({ field }) => (
+                                <TextField
+                                    {...field}
+                                    fullWidth
+                                    className="mui_text_field"
+                                    label="College Name"
+                                    onChange={(event) => {
+                                        setValue("college_name", event.target.value)
+                                    }}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.college_name?.type == "required" && "Field is required"}
+                            {errors.college_name?.type == "pattern" && "Please write Alphanumeric Values"}
+                        </span>
                     </Col>
+
+
+                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                        <Controller
+                            control={control}
+                            name='company_name'
+                            rules={{
+                                required: false,
+                                pattern: /^[a-zA-Z0-9_ -]*$/,
+                            }}
+                            defaultValue={formData3? formData3.company_name : null}
+                            render={({ field }) => (
+                                <TextField
+                                    {...field}
+                                    fullWidth
+                                    className="mui_text_field"
+                                    label="Company Name"
+                                    onChange={(event) => {
+                                        setValue("company_name", event.target.value)
+                                    }}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.company_name?.type == "required" && "Field is required"}
+                            {errors.company_name?.type == "pattern" && "Please write Alphanumeric Values"}
+                        </span>
+                    </Col>
+
 
                     <Col className="mb-4 col" xs="12" sm="6" md="6">
                         <Controller
@@ -597,6 +657,33 @@ const AboutMoreFormTab1 = (props) => {
                         </span>
                     </Col>
 
+                    <Col className="mb-4 col" xs="12" sm="6" md="6">
+                        <Controller
+                            control={control}
+                            name='personal_values'
+                            rules={{
+                                required: false,
+                                pattern: /^[a-zA-Z0-9_ -]*$/,
+                            }}
+                            defaultValue={formData3? formData3.personal_values : ""}
+                            render={({ field }) => (
+                                <TextField
+                                    {...field}
+                                    fullWidth
+                                    className="mui_text_field"
+                                    label="Personal Values"
+                                    onChange={(event) => {
+                                        setValue("personal_values", event.target.value)
+                                    }}
+                                />
+                            )}
+                        />
+                        <span className="field_error">
+                            {errors.personal_values?.type == "required" && "Field is required"}
+                            {errors.personal_values?.type == "pattern" && "Please write Alphanumeric Values"}
+                        </span>
+                    </Col>
+
                     <Col className="prof_cre_form_left_space" md="12">
                         <div className="next_button_panel mt-3_">
                             <Button className='btn_next' onClick={handleBackButton}>
@@ -607,8 +694,22 @@ const AboutMoreFormTab1 = (props) => {
                             <Button type='submit' className='btn_next'>
                                 {"Continue"}
                             </Button>
+                            &nbsp;
+                            &nbsp;
+                            <p className="pref_add_later" onClick={handleAddLater}>I Will Add This Later </p>
+
                         </div>
+
                     </Col>
+
+                    {/* <Col className="mb-4 col" xs="12" sm="6" md="6">
+                                                    <div className="next_button_panel mt-3_">
+                                                        <Button type='submit' className='btn_next me-4'>
+                                                            {"Continue"}
+                                                        </Button>
+                                                        <p className="pref_add_later" onClick={handleAddLater}>I Will Add This Later </p>
+                                                    </div>
+                                                </Col> */}
                 </Row>
             </Form>
         </>
