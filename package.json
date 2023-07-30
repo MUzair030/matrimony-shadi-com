@@ -19,7 +19,7 @@
     "date-fns": "^2.29.3",
     "dayjs": "^1.11.7",
     "emoji-mart": "^3.0.0",
-    "node-sass": "^7.0.3",
+    "node-sass": "^8.0.0",
     "react": "^18.0.0",
     "react-bootstrap": "^2.1.1",
     "react-bootstrap-typeahead": "^6.0.0",

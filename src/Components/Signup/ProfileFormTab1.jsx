@@ -379,7 +379,7 @@ const ProfileFormTab1 = (props) => {
                 <Row>
                     <Col xs="12" sm="12" md="6">
                         <Row className={`${screenWidth < 768 ? 'profile_creation_form_row' : ''}`}>
-                            <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12">
+                            {/* <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12">
                                 <Controller
                                     control={control}
                                     name='sub_community'
@@ -419,8 +419,8 @@ const ProfileFormTab1 = (props) => {
                                 <span className="field_error">
                                     {errors.sub_community?.type == "required" && "Field is required"}
                                 </span>
-                            </Col>
-                            <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12">
+                            </Col> */}
+                            <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="6">
                                 <Controller
                                     control={control}
                                     name='cast'
@@ -462,9 +462,7 @@ const ProfileFormTab1 = (props) => {
                                 </span>
                             </Col>
 
-
-
-                            <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12">
+                            <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="6">
                                 <Controller
                                     control={control}
                                     name='interests'
@@ -517,6 +515,59 @@ const ProfileFormTab1 = (props) => {
 
 
 
+                            {/* <Col className={`mb-4 ${screenWidth < 768 ? 'col' : 'prof_cre_form_left_space'}`} xs="12" sm="6" md="12">
+                                <Controller
+                                    control={control}
+                                    name='interests'
+                                    rules={{ required: false }}
+                                    defaultValue={formData1? formData1.interests : []}
+                                    render={({ field }) => (
+                                        <Autocomplete
+                                            multiple
+                                            className="mui_autocomplete_field"
+                                            {...field}
+                                            popupIcon={<KeyboardArrowDownIcon />}
+                                            options={[
+                                                { id: 1, value: "Sports", },
+                                                { id: 2, value: "Music", },
+                                                { id: 3, value: "Football", },
+                                                { id: 4, value: "Dancer", },
+                                                { id: 5, value: "Cooking", },
+                                                { id: 6, value: "Driving", },
+                                                { id: 7, value: "Cycling", },
+                                                { id: 8, value: "Cricket", },
+                                            ]}
+                                            autoHighlight
+                                            getOptionLabel={(option) => option?.value || ""}
+                                            onChange={(event, newValue) => {
+                                                setValue('interests', newValue);
+                                            }}
+                                            renderInput={(params) => (
+                                                <TextField
+                                                    {...params}
+                                                    fullWidth
+                                                    label="Choose Your Interests"
+                                                    inputProps={{
+                                                        ...params.inputProps,
+                                                        autoComplete: 'off',
+                                                    }}
+                                                />
+                                            )}
+                                            renderOption={(props, option) => (
+                                                <MenuList {...props} className="mui_options_menu_list_render">
+                                                    <MenuItem className="mui_options_menu_item_render">{option.value}</MenuItem>
+                                                </MenuList>
+                                            )}
+                                        />
+                                    )}
+                                />
+                                <span className="field_error">
+                                    {errors.interests?.type == "required" && "Field is required"}
+                                </span>
+                            </Col> */}
+
+
+
 
                             {
                                 screenWidth >= 767 && (
@@ -531,7 +582,7 @@ const ProfileFormTab1 = (props) => {
                             }
                         </Row>
                     </Col>
-                    <Col xs="12" sm="12" md="6">
+                    {/* <Col xs="12" sm="12" md="6">
                         <Row>
                             <Col className="mb-0 prof_cre_form_right_space_about_yourself" xs="12" sm="12" md="12">
                                 <Controller
@@ -573,7 +624,7 @@ const ProfileFormTab1 = (props) => {
                                 </span>
                             </Col>
                         </Row>
-                    </Col>
+                    </Col> */}
                     {
                         screenWidth < 767 && (
                             <Col className="mb-4 prof_cre_form_left_space mt-2" xs="12" sm="12" md="12">

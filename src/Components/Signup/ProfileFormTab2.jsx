@@ -376,6 +376,49 @@ const ProfileFormTab2 = (props) => {
                             {errors.grew_country?.type == "required" && "Field is required"}
                         </span>
                     </Col>
+                    <Col xs="12" sm="12" md="6">
+                        <Row>
+                            <Col className="mb-0 prof_cre_form_right_space_about_yourself" xs="12" sm="12" md="12">
+                                <Controller
+                                    control={control}
+                                    name="intro_about_yourself"
+                                    rules={{ required: false }}
+                                    defaultValue={""}
+                                    render={({ field }) => (
+                                        <FormGroup>
+                                            <Label className="intro_about_yourself_label mb-2 px-3" for="intro_about_yourself" style={introAboutContent.length <= textareaLimit ? { color: 'var(--text-color)' } : { color: 'red' }}>About yourself</Label>
+                                            <Input
+                                                {...field}
+                                                type="textarea"
+                                                className='intro_about_yourselt_textarea'
+                                                // name="intro_about_yourself"
+                                                placeholder={introAboutDefault}
+                                                onChange={event => {
+                                                    setFormattedContent(event.target.value)
+                                                }}
+                                            />
+                                            <div className='intro_about_yourselt_textarea_text_limit'>
+                                                <p className='text_help mb-0' style={introAboutContent.length <= textareaLimit ? { color: 'var(--text-color-dark)' } : { color: 'red' }}>
+                                                    {
+                                                        introAboutContent.length <= textareaLimit ?
+                                                            "Edit the suggested text above👆"
+                                                            : `You can write maximum of only ${textareaLimit} characters`
+                                                    }
+                                                </p>
+                                                <p className='text_limit ms-1 mb-0'>
+                                                    <span className='curr_characters' style={introAboutContent.length <= textareaLimit ? { color: 'blue' } : { color: 'red' }}>{introAboutContent.length}</span>
+                                                    <span className='total_characters'>{`( ${textareaLimit} max )`}</span>
+                                                </p>
+                                            </div>
+                                        </FormGroup>
+                                    )}
+                                />
+                                <span className="field_error">
+                                    {errors.intro_about_yourself?.type == "required" && "Field is required"}
+                                </span>
+                            </Col>
+                        </Row>
+                    </Col>
                 </Row>
                 <Row>
                     <Col xs="12" sm="12" md="6">
