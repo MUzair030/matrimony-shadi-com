@@ -13,14 +13,14 @@
   padding-right: 0px;
 }
 .mymatches_page_center_container {
-  width: 74%;
+  width: 76%;
   /* padding-left: 4px;
   padding-right: 4px; */
   padding-left: 2% !important;
   padding-right: 2% !important;
 }
 .mymatches_page_right_container {
-  width: 14%;
+  width: 12%;
   /* padding-left: 4px; */
   padding-left: 0px;
   /* padding-right: 4px; */
@@ -29,7 +29,7 @@
 
 @media (max-width: 1285.65px) {
   .mymatches_page_left_container {
-    width: 14%;
+    width: 12%;
   }
   .mymatches_page_center_container {
     width: 70%;

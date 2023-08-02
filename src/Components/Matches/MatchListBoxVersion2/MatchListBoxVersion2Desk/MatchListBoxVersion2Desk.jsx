@@ -22,6 +22,7 @@ const MatchListBoxVersion2Desk = (props) => {
                             <img className='match_list_box_v2_image img-fluid' src={`${process.env.PUBLIC_URL}/${user_profile ? user_profile : PhotoTempRequest}`} alt="" />
                         </div>
                     </div>
+                    
                     <div className="match_list_box_v2_detail_wrapped">
                         <div className="match_list_box_v2_detail">
                             <div className="match_list_box_v2_detail_header">

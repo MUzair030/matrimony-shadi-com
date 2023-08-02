@@ -26,7 +26,8 @@ const ChatBox = () => {
 
     return (
         <div className="chat_box" style={{ minHeight: showChatBox == false ? "auto" : 500 }}>
-            <div className="chat_box_header" onClick={handleChatBox}>
+            {/* <div className="chat_box_header" onClick={handleChatBox}> */}
+            <div className="chat_box_header">
                 <CommentOutlinedIcon className="chat_box_icon" />
                 Chat Box
             </div>
