@@ -79,9 +79,18 @@ Write more someting about yourselt.`;
 
 
     const onSubmitForm = (data) => {
+        let formStatus = false;
         console.log("onSubmitForm", data)
-        sessionStorage.setItem("formData2", JSON.stringify(data));
-        props.nextTab();
+        const keys = Object.keys(data);
+        keys.forEach(key => {
+            if(data[key] !== null && data[key]?.length !== 0){
+                formStatus = true;
+            }
+        });
+        if(formStatus){
+            sessionStorage.setItem("formData2", JSON.stringify(data));
+            props.nextTab();
+        }
     }
 
     const handleBackButton = () =>{
@@ -535,7 +544,7 @@ Write more someting about yourselt.`;
                                             &nbsp;
                                             &nbsp;
                                             <Button type='submit' className='btn_next'>
-                                                {"Continue"}
+                                                {"Save"}
                                             </Button>
                                         </div>
                                     </Col>

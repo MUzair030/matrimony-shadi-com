@@ -30,9 +30,10 @@ import { TextValidator, ValidatorForm, SelectValidator } from 'react-material-ui
 import { useForm, Controller } from "react-hook-form"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import AllCountryCodes from "../../assets/init/AllCountryCodes"
+import { useNavigate } from 'react-router-dom';
 
 const AboutMoreFormTab1 = (props) => {
-
+    const navigate = useNavigate();
     const {
         control,
         register,
@@ -93,13 +94,23 @@ const AboutMoreFormTab1 = (props) => {
 
 
     const onSubmitForm = (data) => {
-        console.log("onSubmitForm", data)
-        sessionStorage.setItem("formData3", JSON.stringify(data));
-        props.nextTab();
+        let formStatus = false;
+        console.log("onSubmitForm3", data)
+        const keys = Object.keys(data);
+        keys.forEach(key => {
+            if(data[key] !== null && data[key]?.length !== 0){
+                formStatus = true;
+            }
+        });
+        if(formStatus){
+            sessionStorage.setItem("formData3", JSON.stringify(data));
+            props.nextTab();
+        }
     }
 
     const handleAddLater = () => {
-        props.nextTab();
+        navigate("/partner-preference")
+        // props.nextTab();
     }
 
     const handleBackButton = () =>{
