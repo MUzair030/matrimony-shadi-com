@@ -130,7 +130,7 @@ function HeadNavbar2() {
                       <li className={styles.nlh_list}><Link to={"/about"}>My Info</Link></li>
                       <li className={styles.nlh_list}><Link to={"/dashboard2"}>View Profile</Link></li>
                       <li className={styles.nlh_list}><Link to={""}>Update Info</Link></li>
-                      <li className={styles.nlh_list}><Link to={""}>Recent Visitors</Link></li>
+                      <li className={styles.nlh_list}><Link to={"/visitors"}>Recent Visitors</Link></li>
                     </ul>
                   </li>
 

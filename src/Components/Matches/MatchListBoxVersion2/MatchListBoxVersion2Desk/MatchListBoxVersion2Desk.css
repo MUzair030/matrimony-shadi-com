@@ -42,13 +42,16 @@
     justify-content: space-between;
   }
   
-  .match_list_box_v2_detail_header .match_list_box_v2_detail_name h5 {
+  .match_list_box_v2_detail_header .match_list_box_v2_detail_name h4 {
+    margin: 0;
     margin-top: 5px;
-    font-weight: 600 !important;
+    font-size: 1rem;
+    font-weight: 1000 !important;
     color: var(--text-color);
   
+    text-overflow: none;
     overflow: hidden;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     display: -webkit-box;
     -webkit-line-clamp: 1; /* number of lines to show */
     line-clamp: 1;
@@ -62,7 +65,7 @@
   .match_list_box_v2_detail_body_info span {
     display: inline-block;
     color: gray;
-    font-size: 14px;
+    font-size: 13px !important;
     position: relative;
   }
   .match_list_box_v2_detail_body_info_1 span:nth-child(1) {
@@ -98,7 +101,7 @@
     font-size: 14px !important;
   }
 
-  match_list_box_v2_detail_body_info_2_b{
+  .match_list_box_v2_detail_body_info_2_b{
     font-size: 14px !important; 
   }
   
@@ -125,7 +128,7 @@
   }
   
   .match_list_box_v2_bottom_box_about_box {
-    padding-bottom: 15px;
+    padding-bottom: 14px;
     border-bottom: 2px solid var(--lighter-border);
   }
   
@@ -190,7 +193,7 @@
   .match_list_box_v2_connect_box .match_list_box_v2_connect_box_title {
     text-transform: uppercase;
     color: var(--color-secondary);
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-align: center;
     line-height: 0.9rem;

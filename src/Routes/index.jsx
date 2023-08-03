@@ -19,6 +19,7 @@ import Preferences from "../Components/Preferences/Preferences"
 import PrivacyPolicy from "../Pages/FooterPages/PrivacyPolicy";
 import TermsAndConditions from "../Pages/FooterPages/TermsAndConditions";
 import InboxPage from "../Pages/InboxPage/InboxPage";
+import RecentVisitors from "../Pages/MyShadi/Dashboard/RecentVisitors/RecentVisitors";
 
 export const routes = [
   { path: "/", Component: HomePage },
@@ -31,6 +32,7 @@ export const routes = [
   { path: "/my-matches", Component: MyMatches },
   { path: "/near-me", Component: NearMe },
   { path: "/viewed", Component: RecentlyViewed },
+  { path: "/visitors", Component: RecentVisitors },
   { path: "/more-matches", Component: MoreMatches },
   { path: "/dashboard", Component: Dashboard },
   { path: "/dashboard2", Component: Dashboard2 },

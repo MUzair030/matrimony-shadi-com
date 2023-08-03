@@ -27,34 +27,33 @@ const MyMatches = (props) => {
                         </div>
                         <div className="mymatches_page_center_container px-0">
                             <div className="row justify-content-center m-0">
-                                <div className="my_match_col col-12 col-sm-12 col-md-5 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                     <MatchListBoxVersion2 user_name="Aliza Anthony" />
                                 </div>
                                 {/* <div className="my_match_col col-12 col-sm-8 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
-                                <div className="my_match_col col-12 col-sm-12 col-md-5 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                     <MatchListBoxVersion2 user_name="Ania Ghafoor" user_profile={user_profile1} />
                                 </div>
-                                <div className="my_match_col col-12 col-sm-12 col-md-5 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                 {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
                                     <MatchListBoxVersion2 user_name="Samra Anam" user_profile={user_profile2} />
                                 </div>
-                                <div className="my_match_col col-12 col-sm-12 col-md-5 col-lg-4 mb-4 px-0 px-sm-2">
-                                {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">                                {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
                                     <MatchListBoxVersion2 user_name="Batool Akash" user_profile={user_profile3} />
                                 </div>
-                                <div className="my_match_col col-12 col-sm-12 col-md-5 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                 {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
                                     <MatchListBoxVersion2 user_profile={user_profile4} />
                                 </div>
-                                <div className="my_match_col col-12 col-sm-12 col-md-5 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                 {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
                                     <MatchListBoxVersion2 user_profile={user_profile8} user_name="Ania Shah" />
                                 </div>
-                                <div className="my_match_col col-12 col-sm-6 col-md-4 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                 {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
                                     <MatchListBoxVersion2 user_profile={user_profile5} />
                                 </div>
-                                <div className="my_match_col col-12 col-sm-6 col-md-4 col-lg-4 mb-4 px-0 px-sm-2">
+                                <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2">
                                 {/* <div className="my_match_col col-12 col-sm-12 col-md-6 col-lg-6 mb-4 px-0 px-sm-2"> */}
                                     <MatchListBoxVersion2 user_profile={user_profile10} user_name="Amina Azhar" />
                                 </div>

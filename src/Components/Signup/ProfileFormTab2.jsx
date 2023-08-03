@@ -79,7 +79,7 @@ Write more someting about yourselt.`;
 
 
     const onSubmitForm = (data) => {
-        let formStatus = false;
+        let formStatus = true;  // dummy true later on change to false
         console.log("onSubmitForm", data)
         const keys = Object.keys(data);
         keys.forEach(key => {

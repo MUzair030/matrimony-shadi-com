@@ -94,7 +94,7 @@ const AboutMoreFormTab1 = (props) => {
 
 
     const onSubmitForm = (data) => {
-        let formStatus = false;
+        let formStatus = true;  // dummy true later on change to false
         console.log("onSubmitForm3", data)
         const keys = Object.keys(data);
         keys.forEach(key => {
@@ -106,6 +106,7 @@ const AboutMoreFormTab1 = (props) => {
             sessionStorage.setItem("formData3", JSON.stringify(data));
             props.nextTab();
         }
+        
     }
 
     const handleAddLater = () => {
